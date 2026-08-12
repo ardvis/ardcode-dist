@@ -8,16 +8,17 @@ SHA-256 checksum.
 
 ## Install with Homebrew
 
-Download the cask and install it locally:
+Add the distribution repository as a custom tap and install the cask:
 
 ```sh
-curl -fsSL https://raw.githubusercontent.com/ardvis/ardcode-dist/main/Casks/ardcode.rb \
-  -o /tmp/ardcode.rb
-brew install --cask /tmp/ardcode.rb
+brew tap ardvis/ardcode-dist https://github.com/ardvis/ardcode-dist.git
+brew install --cask ardvis/ardcode-dist/ardcode
 ```
 
 The cask installs `ardcode` into Homebrew's `bin` directory. It currently
 supports Apple Silicon Macs running macOS Ventura or newer.
+
+To remove the tap later, run `brew untap ardvis/ardcode-dist`.
 
 ## Release layout
 
