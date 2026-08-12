@@ -7,7 +7,7 @@ cask "ardcode" do
   desc "Swift-native code graph extractor and MCP server"
   homepage "https://github.com/ardvis/ardcode"
 
-  depends_on macos: ">= :ventura"
+  depends_on macos: :ventura
   depends_on arch: :arm64
 
   binary "ardcode"
