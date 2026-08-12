@@ -5,7 +5,7 @@ cask "ardcode" do
   url "https://github.com/ardvis/ardcode-dist/raw/refs/tags/v#{version}/releases/v#{version}/ardcode-macos-arm64.tar.gz"
   name "ArdCode"
   desc "Swift-native code graph extractor and MCP server"
-  homepage "https://github.com/ardvis/ardcode"
+  homepage "https://github.com/ardvis/ardcode-dist"
 
   depends_on macos: :ventura
   depends_on arch: :arm64

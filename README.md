@@ -1,9 +1,7 @@
 # ArdCode Distribution
 
-This repository stores prebuilt ArdCode command-line releases.
-
-The source code is maintained in [ardvis/ardcode](https://github.com/ardvis/ardcode).
-Each release is pinned by a Git tag and contains a macOS arm64 archive plus its
+This repository stores public, prebuilt ArdCode command-line releases. Each
+release is pinned by a Git tag and contains a macOS arm64 archive plus its
 SHA-256 checksum.
 
 ## Install with Homebrew
