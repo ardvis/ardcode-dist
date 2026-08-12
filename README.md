@@ -1,0 +1,36 @@
+# ArdCode Distribution
+
+This repository stores prebuilt ArdCode command-line releases.
+
+The source code is maintained in [ardvis/ardcode](https://github.com/ardvis/ardcode).
+Each release is pinned by a Git tag and contains a macOS arm64 archive plus its
+SHA-256 checksum.
+
+## Install with Homebrew
+
+Download the cask and install it locally:
+
+```sh
+curl -fsSL https://raw.githubusercontent.com/ardvis/ardcode-dist/main/Casks/ardcode.rb \
+  -o /tmp/ardcode.rb
+brew install --cask /tmp/ardcode.rb
+```
+
+The cask installs `ardcode` into Homebrew's `bin` directory. It currently
+supports Apple Silicon Macs running macOS Ventura or newer.
+
+## Release layout
+
+Each release contains:
+
+```text
+releases/v<version>/ardcode-macos-arm64.tar.gz
+releases/v<version>/ardcode-macos-arm64.sha256
+```
+
+The archive contains one executable named `ardcode` at its root. The checksum
+file contains the SHA-256 digest of the archive.
+
+To prepare a later release, build the matching source revision with Swift 6,
+create the archive and checksum under a new version directory, update
+`Casks/ardcode.rb`, and create the matching Git tag.
