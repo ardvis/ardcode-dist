@@ -1,9 +1,9 @@
 cask "ardcode" do
-  version "0.2.2"
-  sha256 "01f89994e714811703f329d81e3691ae3466f809ff7f5b7e2e488db6dc8c448b"
+  version "0.2.3"
+  sha256 "859c36036a41a3a36960f03dcd00335cccbab2f5abb3d5341c24a95f0be55fa0"
 
   url "https://github.com/ardvis/ardcode-dist/raw/refs/tags/v#{version}/releases/v#{version}/ardcode-macos-arm64.tar.gz"
-  name "ArdCode"
+  name "Ardcode"
   desc "Swift-native code graph extractor and MCP server"
   homepage "https://github.com/ardvis/ardcode-dist"
 
