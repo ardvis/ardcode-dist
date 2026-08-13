@@ -19,4 +19,9 @@ cask "ardcode" do
   homepage "https://github.com/ardvis/ardcode-dist"
 
   binary "ardcode"
+
+  postflight do
+    system_command "#{staged_path}/ardcode",
+                   args: ["install-global", "--force"]
+  end
 end
