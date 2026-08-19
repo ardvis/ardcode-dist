@@ -20,6 +20,8 @@ cask "ardcode" do
   homepage "https://github.com/ardvis/ardcode-dist"
 
   binary "ardcode"
+  artifact "Ardcode_ArdcodeCLI.bundle",
+           target: "#{HOMEBREW_PREFIX}/bin/Ardcode_ArdcodeCLI.bundle"
 
   postflight do
     system_command "#{staged_path}/ardcode",
