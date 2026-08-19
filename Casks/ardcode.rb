@@ -12,6 +12,7 @@ cask "ardcode" do
   on_linux do
     url "https://github.com/ardvis/ardcode-dist/releases/download/v#{version}/ardcode-linux-x64.tar.gz"
     depends_on arch: :x86_64
+    depends_on formula: "libsecret"
   end
 
   name "Ardcode"
@@ -22,6 +23,6 @@ cask "ardcode" do
 
   postflight do
     system_command "#{staged_path}/ardcode",
-                   args: ["install-global", "--force"]
+                   args: ["install-global", "--managed-only"]
   end
 end
