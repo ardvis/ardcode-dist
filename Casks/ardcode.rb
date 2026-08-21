@@ -1,7 +1,7 @@
 cask "ardcode" do
-  version "0.4.18"
-  sha256 arm:          "f6a00e5170e058896d2ae4ff0f37e8633d30687f7b646d502caa10faed14e4e1",
-         x86_64_linux: "6e0f6294bb579bb8f6bb375f04e4b5ee301cfc3efcefcdc2da2be7ad40379b76"
+  version "0.4.19"
+  sha256 arm:          "5651bfa564e9415cc9bb3c05b8f3ab0accf0a2cafeea7d1ed551c0aa5b06cdc4",
+         x86_64_linux: "53243b194d2aa2ca06912376499918a33539568d0d107cc9e41cc205cec0c01a"
 
   on_macos do
     url "https://github.com/ardvis/ardcode-dist/releases/download/v#{version}/ardcode-macos-arm64.tar.gz"
@@ -28,6 +28,6 @@ cask "ardcode" do
   binary "ardcode"
   postflight do
     system_command "#{staged_path}/ardcode",
-                   args: ["install-global", "--managed-only"]
+                   args: ["setup", "--managed-only"]
   end
 end
