@@ -8,6 +8,7 @@ cask "ardcode" do
     depends_on macos: :ventura
     depends_on arch: :arm64
     depends_on formula: "sqlite"
+    depends_on formula: "llama.cpp"
     artifact "Ardcode_ArdcodeCLI.bundle",
              target: "#{HOMEBREW_PREFIX}/bin/Ardcode_ArdcodeCLI.bundle"
   end
@@ -16,6 +17,7 @@ cask "ardcode" do
     url "https://github.com/ardvis/ardcode-dist/releases/download/v#{version}/ardcode-linux-x64.tar.gz"
     depends_on arch: :x86_64
     depends_on formula: "sqlite"
+    depends_on formula: "llama.cpp"
     depends_on formula: "libsecret"
     artifact "Ardcode_ArdcodeCLI.resources",
              target: "#{HOMEBREW_PREFIX}/bin/Ardcode_ArdcodeCLI.resources"
