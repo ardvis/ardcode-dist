@@ -1,7 +1,7 @@
 cask "ardcode" do
-  version "0.7.21"
-  sha256 arm:          "c1004baf49bbe4f73fc3cc10222895e4d244a8e1c2a132b39bbd2760cf3ef2b4",
-         x86_64_linux: "9a20951c835189653a2b2de070fab7f91094d4c41e0ee10f75e3ea032fe5d4a7"
+  version "0.7.22"
+  sha256 arm:          "253860956b012091810c5b2505b714abd91769d85c135387903d282c60604087",
+         x86_64_linux: "fd4f5c41751ce15a5c8feedd0c828452baa211caddf2c476b2c7cabe146c92b8"
 
   on_macos do
     url "https://github.com/ardvis/ardcode-dist/releases/download/v#{version}/ardcode-macos-arm64.tar.gz"
