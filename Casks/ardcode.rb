@@ -9,8 +9,6 @@ cask "ardcode" do
     depends_on arch: :arm64
     depends_on formula: "sqlite"
     depends_on formula: "llama.cpp"
-    artifact "Ardcode_ArdcodeCLI.bundle",
-             target: "#{HOMEBREW_PREFIX}/bin/Ardcode_ArdcodeCLI.bundle"
   end
 
   on_linux do
@@ -19,8 +17,6 @@ cask "ardcode" do
     depends_on formula: "sqlite"
     depends_on formula: "llama.cpp"
     depends_on formula: "libsecret"
-    artifact "Ardcode_ArdcodeCLI.resources",
-             target: "#{HOMEBREW_PREFIX}/bin/Ardcode_ArdcodeCLI.resources"
   end
 
   name "Ardcode"
