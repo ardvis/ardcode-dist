@@ -1,7 +1,7 @@
 # ArdCode Distribution
 
 This repository stores the Homebrew cask and metadata for public Ardcode
-command-line releases. Signed macOS arm64 and fully static Linux x86_64
+command-line releases. Signed macOS arm64 and glibc-based Linux x86_64
 archives, with their SHA-256 checksums, are uploaded to GitHub Release pages,
 not committed to Git.
 
@@ -28,6 +28,7 @@ ardcode-macos-arm64.tar.gz
 ardcode-macos-arm64.sha256
 ardcode-linux-x64.tar.gz
 ardcode-linux-x64.sha256
+ardcode-<version>.spdx.json
 ```
 
 The archive contains one executable named `ardcode` at its root. The checksum
