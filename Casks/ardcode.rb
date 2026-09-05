@@ -18,7 +18,7 @@ cask "ardcode" do
   postflight_steps do
     run "{{staged_path}}/ardcode",
         args: ["setup", "--managed-only"],
-        writable_paths: [".agents", ".claude.json", ".codex", ".gemini"],
+        writable_paths: [".agents", ".claude", ".claude.json", ".codex", ".gemini"],
         writable_base: :home
   end
 end
