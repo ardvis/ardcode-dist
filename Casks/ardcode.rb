@@ -15,8 +15,10 @@ cask "ardcode" do
   homepage "https://github.com/ardvis/ardcode-dist"
 
   binary "ardcode"
-  postflight do
-    system_command "#{staged_path}/ardcode",
-                   args: ["setup", "--managed-only"]
+  postflight_steps do
+    run "{{staged_path}}/ardcode",
+        args: ["setup", "--managed-only"],
+        writable_paths: [".agents", ".claude.json", ".codex", ".gemini"],
+        writable_base: :home
   end
 end
