@@ -4,7 +4,7 @@ cask "ardcode" do
 
   on_macos do
     url "https://github.com/ardvis/ardcode-dist/releases/download/v#{version}/ardcode-macos-arm64.tar.gz"
-    depends_on macos: :ventura
+    depends_on macos: ">= :tahoe"
     depends_on arch: :arm64
     depends_on formula: "sqlite"
     depends_on formula: "llama.cpp"
