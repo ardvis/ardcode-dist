@@ -31,8 +31,16 @@ ardcode-linux-x64.sha256
 ardcode-<version>.spdx.json
 ```
 
-The archive contains one executable named `ardcode` at its root. The checksum
-asset contains the SHA-256 digest of the archive.
+New releases include the `ardcode` executable, its adjacent SwiftPM resource
+bundle, and a `Legal` directory containing original third-party notices,
+software-rights information, a privacy summary, and provenance. Keep the resource
+bundle beside the executable when installing manually. The checksum asset
+contains the SHA-256 digest of the archive.
+
+Read [licensing and legal information](LICENSING.md). In releases with legal
+resources, use `ardcode licenses` or open **Legal & privacy** in the native or
+web dashboard. Consult the notices bundled with your exact version; this
+documentation does not retrofit notices into earlier releases.
 
 To prepare a later release, build the matching source revision with Swift 6,
 create the archive and checksum outside this repository, update
