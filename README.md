@@ -42,7 +42,16 @@ resources, use `ardcode licenses` or open **Legal & privacy** in the native or
 web dashboard. Consult the notices bundled with your exact version; this
 documentation does not retrofit notices into earlier releases.
 
-To prepare a later release, build the matching source revision with Swift 6,
-create the archive and checksum outside this repository, update
-`Casks/ardcode.rb` to use the `releases/download` URL, create the matching Git
-tag, and upload both files to the GitHub Release.
+## Release ownership
+
+The checked-out `ardcode-dist` directory is the authoritative Homebrew
+publication checkout for the workspace. Run the release from the workspace:
+
+```sh
+make -C ardcode release VERSION="<next-version>"
+```
+
+The source release creates and verifies the GitHub assets and attestation, then
+updates, commits, and pushes `Casks/ardcode.rb` here. Do not build archives,
+create tags, upload releases, or edit the cask manually; a correction requires a
+new patch version.
