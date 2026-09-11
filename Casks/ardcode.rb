@@ -1,6 +1,6 @@
 cask "ardcode" do
-  version "0.8.28"
-  sha256 arm:          "563fb0aa312ae75d748f58b574e68501beb7401d9c8c83d47e6c0eeabb3fbfb7"
+  version "0.8.29"
+  sha256 arm:          "bb063d8fcd8dc465a393cf811d915d6b56871f63bab9bd509493b78ec446a6a6"
 
   on_macos do
     url "https://github.com/ardvis/ardcode-dist/releases/download/v#{version}/ardcode-macos-arm64.tar.gz"
@@ -8,6 +8,7 @@ cask "ardcode" do
     depends_on arch: :arm64
     depends_on formula: "sqlite"
     depends_on formula: "llama.cpp"
+    app "Ardcode.app"
   end
 
   name "Ardcode"
