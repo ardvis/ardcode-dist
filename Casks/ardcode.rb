@@ -7,6 +7,7 @@ cask "ardcode" do
     depends_on macos: :tahoe
     depends_on arch: :arm64
     depends_on formula: "sqlite"
+    depends_on cask: "font-fira-code"
     app "Ardcode.app"
   end
 
