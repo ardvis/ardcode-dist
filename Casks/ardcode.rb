@@ -11,7 +11,7 @@ cask "ardcode" do
   end
 
   name "Ardcode"
-  desc "Swift-native code graph extractor and MCP server"
+  desc "Native code editor with indexed exploration and MCP integration"
   homepage "https://github.com/ardvis/ardcode-dist"
 
   binary "ardcode"

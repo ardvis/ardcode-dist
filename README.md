@@ -1,9 +1,9 @@
 # ArdCode Distribution
 
 This repository stores the Homebrew cask and metadata for public Ardcode
-command-line releases. Signed macOS arm64 and glibc-based Linux x86_64
-archives, with their SHA-256 checksums, are uploaded to GitHub Release pages,
-not committed to Git.
+releases. Each release contains the unified, signed macOS app and its bundled
+command-line tool for Apple silicon. Archives and their SHA-256 checksums are
+uploaded to GitHub Release pages, not committed to Git.
 
 ## Install with Homebrew
 
@@ -14,8 +14,9 @@ brew tap ardvis/ardcode-dist https://github.com/ardvis/ardcode-dist.git
 brew install --cask ardvis/ardcode-dist/ardcode
 ```
 
-The cask installs `ardcode` into Homebrew's `bin` directory. It supports Apple
-Silicon Macs running macOS Ventura or newer and x86_64 Linux.
+The cask installs `Ardcode.app` and links its bundled `ardcode` helper into
+Homebrew's `bin` directory. Ardcode supports Apple silicon Macs running macOS
+Tahoe or newer.
 
 To remove the tap later, run `brew untap ardvis/ardcode-dist`.
 
@@ -26,8 +27,6 @@ Each GitHub Release contains these assets:
 ```text
 ardcode-macos-arm64.tar.gz
 ardcode-macos-arm64.sha256
-ardcode-linux-x64.tar.gz
-ardcode-linux-x64.sha256
 ardcode-<version>.spdx.json
 ```
 
@@ -38,9 +37,9 @@ bundle beside the executable when installing manually. The checksum asset
 contains the SHA-256 digest of the archive.
 
 Read [licensing and legal information](LICENSING.md). In releases with legal
-resources, use `ardcode licenses` or open **Legal & privacy** in the native or
-web dashboard. Consult the notices bundled with your exact version; this
-documentation does not retrofit notices into earlier releases.
+resources, use `ardcode licenses` or open **Legal & privacy** in the Ardcode
+app. Consult the notices bundled with your exact version; this documentation
+does not retrofit notices into earlier releases.
 
 ## Release ownership
 
