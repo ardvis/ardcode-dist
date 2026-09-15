@@ -11,13 +11,13 @@ cask "ardcode" do
   end
 
   postflight do
-    system_command "#{staged_path}/ardcode", args: ["setup", "--managed-only"]
+    system_command "#{staged_path}/Ardcode.app/Contents/Helpers/ardcode", args: ["setup", "--managed-only"]
   end
 
   name "Ardcode"
   desc "Native code editor with indexed exploration and MCP integration"
   homepage "https://github.com/ardvis/ardcode-dist"
 
-  binary "ardcode"
+  binary "Ardcode.app/Contents/Helpers/ardcode"
 
 end
