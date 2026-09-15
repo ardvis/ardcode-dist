@@ -1,6 +1,6 @@
 cask "ardcode" do
-  version "0.8.45"
-  sha256 arm:          "b4c48e047a4dbf4f40622170b3e81dfb1ef82bbf49135ad9dba7c100b6c40959"
+  version "0.8.46"
+  sha256 arm:          "01f8a7da558d631d9401527ee1eec8995a01509fd47c804766367b129dc9c822"
 
   on_macos do
     url "https://github.com/ardvis/ardcode-dist/releases/download/v#{version}/ardcode-macos-arm64.tar.gz"
@@ -11,8 +11,11 @@ cask "ardcode" do
   end
 
   postflight_steps do
-    run "{{staged_path}}/Ardcode.app/Contents/MacOS/Ardcode",
-        args:           ["--managed-setup"],
+    # Run the bundled CLI directly. Homebrew postflight is sandboxed and has
+    # no interactive AppKit session; launching the SwiftUI app would abort
+    # while NSApplication initializes, before its delegate can handle setup.
+    run "{{staged_path}}/Ardcode.app/Contents/Helpers/ardcode",
+        args:           ["setup", "--managed-only"],
         writable_paths: [".agents", ".claude", ".claude.json", ".codex", ".gemini"],
         writable_base:  :home
   end
