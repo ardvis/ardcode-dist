@@ -1,6 +1,6 @@
 cask "ardcode" do
-  version "0.8.47"
-  sha256 arm:          "ff58e81efbc451bdc429283ba8293e52d8f79f75a7af604c87a0b1e1a3a95393"
+  version "0.8.48"
+  sha256 arm:          "4772ab5963fe1ea4b49a09f216ecffdc6b0597cdf7ff9e0f3bd9071599cc5d3f"
 
   on_macos do
     url "https://github.com/ardvis/ardcode-dist/releases/download/v#{version}/ardcode-macos-arm64.tar.gz"
@@ -11,10 +11,10 @@ cask "ardcode" do
   end
 
   postflight_steps do
-    # Run the bundled CLI directly. Homebrew postflight is sandboxed and has
-    # no interactive AppKit session; launching the SwiftUI app would abort
-    # while NSApplication initializes, before its delegate can handle setup.
-    run "{{staged_path}}/Ardcode.app/Contents/Helpers/ardcode",
+    # Run the self-contained, signed CLI helper directly. Homebrew postflight
+    # is sandboxed and has no interactive AppKit session; launching the SwiftUI
+    # app would abort while NSApplication initializes.
+    run "{{staged_path}}/Ardcode.app/Contents/Helpers/ardcode.app/Contents/MacOS/ardcode",
         args:           ["setup", "--managed-only"],
         writable_paths: [".agents", ".claude", ".claude.json", ".codex", ".gemini"],
         writable_base:  :home
@@ -24,6 +24,6 @@ cask "ardcode" do
   desc "Native code editor with indexed exploration and MCP integration"
   homepage "https://github.com/ardvis/ardcode-dist"
 
-  binary "Ardcode.app/Contents/Helpers/ardcode"
+  binary "Ardcode.app/Contents/Helpers/ardcode.app/Contents/MacOS/ardcode"
 
 end
