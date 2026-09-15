@@ -1,6 +1,6 @@
 cask "ardcode" do
-  version "0.8.44"
-  sha256 arm:          "6424cdd68d5b7465d6b76fbb949206c7103034584c4a089f043b5b8bc07feaad"
+  version "0.8.45"
+  sha256 arm:          "b4c48e047a4dbf4f40622170b3e81dfb1ef82bbf49135ad9dba7c100b6c40959"
 
   on_macos do
     url "https://github.com/ardvis/ardcode-dist/releases/download/v#{version}/ardcode-macos-arm64.tar.gz"
@@ -10,8 +10,11 @@ cask "ardcode" do
     app "Ardcode.app"
   end
 
-  postflight do
-    system_command "#{staged_path}/Ardcode.app/Contents/Helpers/ardcode", args: ["setup", "--managed-only"]
+  postflight_steps do
+    run "{{staged_path}}/Ardcode.app/Contents/MacOS/Ardcode",
+        args:           ["--managed-setup"],
+        writable_paths: [".agents", ".claude", ".claude.json", ".codex", ".gemini"],
+        writable_base:  :home
   end
 
   name "Ardcode"
